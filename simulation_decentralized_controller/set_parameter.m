@@ -1,10 +1,11 @@
 %% Simulation Parameters
-T = 0.03;           % Ending time
+
+T = 100;           % Ending time
 dt = 0.01;          % Time step
 maxIter = T/dt;     % Maximum iteration
 nAgent = 6;         % The number of agents
-w0 = 1.*ones(1,nAgent);    % Desired orbital velocity (rad/s) 
-v0 = 50.*ones(1,nAgent);     % Constant heading velocity (m/s)
+w0 = 0.8.*ones(1,nAgent);    % Desired orbital velocity (rad/s) 
+v0 = 40.*ones(1,nAgent);     % Constant heading velocity (m/s)
 
 %% Region Configuration
 Width = 800;
@@ -16,8 +17,8 @@ vertexes = [0, 0; 0, Height; Width, Height; Width, 0; 0, 0];
 
 %% Controller Parameters
 Q = eye(2);      % Positive definite matrix Q
-gamma = 1;       % Control gain gamma
-eps = 0.2;       % Epsilon of the sigmoi function
+gamma = 0.1;       % Control gain gamma
+eps = 2;       % Epsilon of the sigmoi function
 
 
 %% Set initial agent poses
@@ -32,3 +33,5 @@ initPose = [60.68 624.4 350.6 579.2 782.5 430.3;
 % initPose = [349.1 20.24 439.9 348.4 336.6 263.8;
 %             123.2 371.5 180.3 159.6 372.3 317.5;
 %             0.845 3.227 1.159 4.934 5.366 3.105]'; % Case 3
+    
+    
